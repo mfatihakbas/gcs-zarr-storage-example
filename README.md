@@ -34,12 +34,49 @@ gcsfs
 
 ---
 
+## 🛠 How to Set Up Google Cloud Storage (Key Pair Generation)
+
+If you prefer to use your own Google Cloud credentials instead of the provided key file, you can follow these steps to create your own S3-like storage and key:
+
+1. **Create a Google Cloud Project**  
+   Visit: https://console.cloud.google.com/
+
+2. **Enable Cloud Storage API**  
+   Go to: `APIs & Services > Library > Cloud Storage`  
+   Click "Enable".
+
+3. **Create a Storage Bucket**  
+   Navigate to: `Cloud Storage > Buckets`  
+   Click “Create Bucket” and follow the prompts.  
+   (You can use a name like `zarr-test-bucket-xxxxx`)
+
+4. **Create a Service Account**  
+   Go to: `IAM & Admin > Service Accounts`  
+   Click “Create Service Account”  
+   Grant the role: `Storage Admin`
+
+5. **Generate a JSON Key File**  
+   - Open the created service account  
+   - Go to the "Keys" tab  
+   - Click “Add Key” → “Create New Key” → Select JSON  
+   - Download the `.json` file
+
+6. **Use the Key in Your Project**  
+   Save the downloaded file into your project directory.  
+   Then in `main.py`, use it like this:
+
+   ```python
+   gcs = gcsfs.GCSFileSystem(token='your-key.json')
+   ```
+
+---
+
 ## 🔐 Service Account Key
 
 For security reasons, the `.json` key file is not included in this repository.  
 However, you can download it from the following secure link to test the script:
 
-👉 [Download the service account key](https://drive.google.com/file/d/1P4hyfF_nwtBlddg7n1nTWAQ-0c1kfpKs/view?usp=sharing)
+[Download the service account key](https://drive.google.com/file/d/1P4hyfF_nwtBlddg7n1nTWAQ-0c1kfpKs/view?usp=sharing)
 
 Make sure to place the downloaded `.json` file in the project directory before running the script.
 
