@@ -17,7 +17,7 @@ It was developed as part of a programming assignment and illustrates cloud-based
 ## ⚙️ Requirements
 
 - Python 3.8 or newer  
-- No need to create a GCP account — the project uses a shared service account key.
+- A Google Cloud Platform (GCP) service account key file
 
 Install all dependencies using:
 
@@ -75,4 +75,4 @@ This project satisfies the assignment criteria by:
 - Uploading the array to a Google Cloud Storage bucket  
 - Downloading and reading it back to verify data integrity
 
-For any questions or if you need help accessing the key, feel free to contact the project author.
+If you need assistance or access to the credentials, feel free to contact the project author.

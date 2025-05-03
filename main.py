@@ -1,15 +1,16 @@
 """
 main.py
 
-This script creates a sample NumPy array, saves it in Zarr format,
-uploads it to Google Cloud Storage (GCS), then downloads it and reads it back.
+This script creates a sample NumPy array, saves it in Zarr format locally,
+uploads it to Google Cloud Storage (GCS), and then downloads and reads it back
+to verify the integrity of the data.
 
 🔐 CREDENTIALS NOTICE:
-This script uses a GCP service account JSON key 
+This script uses a Google Cloud service account key file 
 (`zarr-storage-project-a68666d70bdf.json`) to authenticate with GCS.
 
-⚠️ For security reasons, the key file is not included in this repository.  
-Please refer to the README file for instructions on how to access it securely.
+⚠️ For security reasons, this file is NOT included in the repository.
+Please refer to the README for instructions and a secure download link to the key file.
 """
 
 import numpy as np
