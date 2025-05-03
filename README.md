@@ -17,7 +17,7 @@ It was developed as part of a programming assignment and illustrates cloud-based
 ## ⚙️ Requirements
 
 - Python 3.8 or newer  
-- A Google Cloud Platform (GCP) account with Cloud Storage enabled
+- No need to create a GCP account — the project uses a shared service account key.
 
 Install all dependencies using:
 
@@ -31,38 +31,6 @@ numpy
 zarr  
 gcsfs
 ```
-
----
-
-## ☁️ Google Cloud Setup Steps
-
-To run the script using your own GCP credentials:
-
-1. **Create a Google Cloud project**  
-   Visit: https://console.cloud.google.com/
-
-2. **Enable Cloud Storage API**  
-   Go to: `APIs & Services > Library > Cloud Storage`
-
-3. **Create a Storage Bucket**  
-   Example name: `zarr-test-bucket-20250503`
-
-4. **Create a Service Account**  
-   - Go to: `IAM & Admin > Service Accounts`  
-   - Click “Create Service Account”  
-   - Grant role: `Storage Admin`
-
-5. **Download a JSON Key File**  
-   - Go to the service account’s “Keys” tab  
-   - Click “Add Key” → “Create New Key” → JSON  
-   - Save the `.json` file to your project folder
-
-6. **Update the Python Script**  
-   Modify this line in `main.py` with your file name:
-
-   ```python
-   gcs = gcsfs.GCSFileSystem(token='your-key.json')
-   ```
 
 ---
 
