@@ -53,7 +53,7 @@ If you prefer to use your own Google Cloud credentials instead of the provided k
 4. **Create a Service Account**  
    Go to: `IAM & Admin > Service Accounts`  
    Click “Create Service Account”  
-   Grant the role: `Storage Admin`
+   Grant the role: Cloud Storage > Storage Admin
 
 5. **Generate a JSON Key File**  
    - Open the created service account  
